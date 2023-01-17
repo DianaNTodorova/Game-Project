@@ -17,10 +17,10 @@ const Login = () => {
 
   const proceedLogin = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:8000/user/' + username);
-    const data = await response.json();
-    setLogin(data);
     if (validate()) {
+      const response = await fetch('http://localhost:8000/user/' + username);
+      const data = await response.json();
+      setLogin(data);
       toast.success('Welcome ' + username);
     } else {
       toast.error('Please Enter valid credentials');
