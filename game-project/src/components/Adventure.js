@@ -30,6 +30,7 @@ const Adventure = () => {
     start: {
       image: <img src={knight} alt="knight" />,
       statement : `A Knight is traveling through the enchantress forest when he suddenly sees a treasure in the path.`,
+      statement: `A Knight is traveling through the enchantress forest when he suddenly sees a treasure in the path.`,
       options: [
         { btnLabel: 'Take the treasure', nextStage: 'key1' },
         { btnLabel: 'Leave the treasure', nextStage: 'key2' },

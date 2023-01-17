@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Stage.css";
+//import "./Stage.css";
 
 const Stage = ({ Stage, handleOptionSelect }) => {
   return (
