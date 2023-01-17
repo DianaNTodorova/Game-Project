@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,41 +10,46 @@ import usersolid from '../images/usersolid.png';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [login, setLogin] = useState({});
 
-  useEffect(() => {
-    proceedLogin();
-  }, []);
+  const navigate = useNavigate();
 
+  const checkUser = (users) => {
+    const user = users.find(
+      (user) => user.username === username && user.password === password
+    );
+    console.log(user);
+    if (user.username === username && user.password === password) return user;
+  };
   const proceedLogin = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      const response = await fetch('http://localhost:8000/user/' + username);
-      const data = await response.json();
-      setLogin(data);
+    if (username === '' || username === null) {
+      toast.warning('Please Enter Username');
+    }
+    if (password === '' || password === null) {
+      toast.warning('Please Enter Password');
+    }
+    const user = await axios
+      .get('http://localhost:8000/user/')
+      .then((res) => checkUser(res.data, username, password))
+      .catch((error) => {
+        console.log(error);
+      });
 
+    if (user.username === username && user.password === password) {
+      /*navigate('/');*/
+      localStorage.getItem('user', JSON.stringify(user.id));
       toast.success('Welcome ' + username);
     } else {
       toast.error('Please Enter valid credentials');
     }
+    setUsername('');
+    setPassword('');
   };
 
-  const validate = () => {
-    let result = true;
-    if (username === '' || username === null) {
-      result = false;
-      toast.warning('Please Enter Username');
-    }
-    if (password === '' || password === null) {
-      result = false;
-      toast.warning('Please Enter Password');
-    }
-    return result;
-  };
   return (
     <div className="row">
       <div className="offset-lg-3 col-lg-5" style={{ marginTop: '100px' }}>
-        <form onSubmit={proceedLogin} className="container">
+        <form className="container">
           <div className="card">
             <div className="mt-3 text-center">
               <h2>Login</h2>
@@ -78,6 +84,7 @@ const Login = () => {
             mb-3 text-center"
             >
               <button
+                onClick={proceedLogin}
                 type="submit"
                 className="btn btn-lg btn-outline-secondary m-2"
               >
