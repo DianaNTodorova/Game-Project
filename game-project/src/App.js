@@ -1,9 +1,17 @@
-import './App.css';
-import Adventure from './components/Adventure';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <div>
-      <Adventure></Adventure>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Login />}></Route>
+        </Routes>
+      </BrowserRouter>
+      <ToastContainer theme="colored" position="top-center" />
     </div>
   );
 }
