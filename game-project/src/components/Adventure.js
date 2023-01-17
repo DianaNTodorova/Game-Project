@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React from 'react';
 //import "./Adventure.css";
 import Stage from './Stage';
@@ -144,4 +142,3 @@ const Adventure = () => {
 };
 
 export default Adventure;
->>>>>>> Stashed changes

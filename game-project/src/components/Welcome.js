@@ -11,9 +11,10 @@ function Welcome() {
         <h2> Going through The Enchanter's Forest</h2>
         <p> You will explore the mysterious world of legends. </p>
         <p>
-    
           This is where your courage and strength will be tested. And where you
-          will discover the value of your decisions in the journey.{" "}
+          will discover the value of your decisions in the journey. This is
+          where your courage and strength will be tested. And where you will
+          discover the value of your decisions in the journey.
         </p>
         <p className="highlight-p">Choose your path wisely, brave knight!</p>
       </div>
