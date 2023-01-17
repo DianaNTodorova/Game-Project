@@ -1,0 +1,89 @@
+.main-box {
+  box-sizing: border-box;
+  background-image: url(../images/background.svg);
+  background-attachment: fixed;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  width: 75vw !important;
+  height: 75vh !important;
+  border-radius: 5%;
+}
+.statement-box {
+  width: 80%;
+  height: 60%;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.play-btn {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 50px 200px;
+  border-radius: 2%;
+  border-color: white;
+  background: rgb(191, 204, 192);
+  background: linear-gradient(
+    90deg,
+    rgba(191, 204, 192, 1) 0%,
+    rgba(28, 105, 33, 1) 56%,
+    rgba(35, 31, 60, 1) 97%
+  );
+  line-height: 22px;
+  padding: 16px 24px;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  cursor: pointer;
+}
+.play-btn:hover {
+  background: hsl(293, 64%, 30%);
+  cursor: pointer;
+}
+.login-btn {
+  height: 80px;
+  width: 150px;
+  left: 820px;
+  top: 72px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 22px;
+  padding: 16px 24px;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  cursor: pointer;
+}
+.login-btn:hover {
+  background: hsl(293, 64%, 30%);
+  cursor: pointer;
+}
+
+.signup-btn {
+  height: 80px;
+  width: 150px;
+  left: 991px;
+  top: 74px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 22px;
+  padding: 16px 24px;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  cursor: pointer;
+}
+.signup-btn:hover {
+  background: hsl(293, 64%, 30%);
+  cursor: pointer;
+}
+div,
+p {
+  color: #fff;
+  font-size: 16px;
+}
+h2,
+p {
+  text-align: center;
+}
+.highlight-p {
+  font-size: 30px;
+  font-weight: 600;
+}
