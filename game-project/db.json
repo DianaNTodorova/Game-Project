@@ -2,13 +2,13 @@
   "user": [
     {
       "id": 1,
-      "name": "Ana",
+      "username": "Ana",
       "password": "admin",
       "email": "ana@gmail.com"
     },
     {
       "id": 2,
-      "name": "Anders",
+      "username": "Anders",
       "password": "shell",
       "email": "anders@email.com"
     }
