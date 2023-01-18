@@ -6,15 +6,15 @@ function Welcome() {
   return (
     <div className="main-box">
       <div className="header d-flex ">
-        <Link to="/Adventure">
-          <div className="play-btn btn ">Play</div>
-        </Link>
-        <Link to="/Login">
-          <div className="login-btn btn ">Login</div>
-        </Link>
-        <Link to="/Signup">
-          <div className="signup-btn btn ">Signup</div>
-        </Link>
+        <div className="left-btn"></div>
+        <div className="right-btn">
+          <Link to="/Login">
+            <div className="login-btn btn ">Login</div>
+          </Link>
+          <Link to="/Signup">
+            <div className="signup-btn btn ">Signup</div>
+          </Link>
+        </div>
       </div>
       <div className="wrapper-statement-box">
         <div className="statement-box card">
@@ -29,6 +29,11 @@ function Welcome() {
             <p className="highlight-p">
               Choose your path wisely, brave knight!
             </p>
+          </div>
+          <div className="play-btn-container">
+            <Link to="/Adventure">
+              <div className="welcome-play-btn play-btn btn ">Play</div>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,26 +1,26 @@
-import React from 'react';
-//import "./Adventure.css";
-import Stage from './Stage';
-import { useState } from 'react';
+import React from "react";
+import "../styles/Adventure.css";
+import Stage from "./Stage";
+import { useState } from "react";
 
 //************images***************
-import knight from '../images/knight.png';
-import merchant from '../images/merchant.png';
-import village from '../images/village.png';
-import monster from '../images/monster.png';
-import prisoner from '../images/prisoner.png';
-import castle from '../images/castle.png';
-import congrates from '../images/congrates.png';
+import congrats from "../images/congrats.webp";
+import merchant from "../images/merchant.png";
+import redmonster from "../images/redmonster.png";
+import prison from "../images/prison.jpeg";
+import castle from "../images/castle.png";
+import treasure from "../images/treasure.png";
+import shield from "../images/shield.png";
 //************images***************
 
 const Adventure = () => {
-  const [currentStage, setCurrentStage] = useState('');
+  const [currentStage, setCurrentStage] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [playButtonVisible, setPlayButtonVisible] = useState(true);
 
   // Function for to start game!
   const startGame = () => {
-    setCurrentStage('start');
+    setCurrentStage("start");
     setModalIsOpen(true);
     setPlayButtonVisible(false);
   };
@@ -28,91 +28,91 @@ const Adventure = () => {
   // Stages/Levels of the game.
   const stages = {
     start: {
-      image: <img src={knight} alt="knight" />,
-      statement : `A Knight is traveling through the enchantress forest when he suddenly sees a treasure in the path.`,
-      statement: `A Knight is traveling through the enchantress forest when he suddenly sees a treasure in the path.`,
+      image: <img src={treasure} alt="treasure" />,
+      statement: `A Knight is traveling through the Enchanted Forest when suddenly he see a chest full of treasures in the path. </br> Brave knight, choose what to do.`,
       options: [
-        { btnLabel: 'Take the treasure', nextStage: 'key1' },
-        { btnLabel: 'Leave the treasure', nextStage: 'key2' },
+        { btnLabel: "Take treasure", nextStage: "key1" },
+        { btnLabel: "Leave treasure", nextStage: "key2" },
       ],
     },
     key1: {
       image: <img src={merchant} alt="merchant" />,
-      statement: 'The Knight come across a merchant that offers him to trade.',
+      statement:
+        "You come across a merchant who offers to trade. </br> </br> Choose your weapon.",
       options: [
-        { btnLabel: 'Trade for a sword', nextStage: 'key3' },
-        { btnLabel: 'Trade for a shield', nextStage: 'key4' },
-        { btnLabel: 'Ignore the merchant', nextStage: 'key5' },
+        { btnLabel: "Sword", nextStage: "key3" },
+        { btnLabel: "Shield", nextStage: "key4" },
+        { btnLabel: "IGNORE", nextStage: "key5" },
       ],
     },
-    key3: {
-      image: <img src={village} alt="village" />,
+    key2: {
+      image: <img src={prison} alt="imprisoned" />,
       statement:
-        'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
+        "With no money to rent a room, you break into an inn. The owner is enraged and sent you to a cell. <br><br><strong>YOU LOSE THE GAME! </strong>",
+      options: [{ btnLabel: "Try Again", nextStage: "start" }],
+    },
+    key3: {
+      image: <img src={castle} alt="castle" />,
+      statement:
+        "After leaving the merchant you stumble upon an abandoned castle. </br> </br> Choose what to do.",
       options: [
-        { btnLabel: 'Explore the castle', nextStage: 'key6' },
-        { btnLabel: 'Continue to the village', nextStage: 'key7' },
+        { btnLabel: "Explore", nextStage: "key6" },
+        { btnLabel: "Ignore and Continue", nextStage: "key7" },
+      ],
+    },
+    key4: {
+      image: <img src={shield} alt="shield" />,
+      statement:
+        "The shield can protect you but you cannot fight back againts the monster. <br><br>YOU LOSE THE GAME!",
+      options: [{ btnLabel: "Try Again", nextStage: "start" }],
+    },
+    key5: {
+      image: <img src={castle} alt="village" />,
+      statement:
+        "After leaving the merchant you continued through the forest and stumble upon an abandoned castle. </br> </br> Choose what to do.",
+      options: [
+        { btnLabel: "Explore", nextStage: "key10" },
+        { btnLabel: "Continue to the village", nextStage: "key11" },
       ],
     },
     key6: {
-      image: <img src={monster} alt="monster" />,
+      image: <img src={redmonster} alt="monster" />,
       statement:
-        'Wile exploring the castle you come across a horrible monster in your path.',
+        "Overcomed by curiosity your long stay in the castle awakened the monster!",
       options: [
-        { btnLabel: 'Attack with sword', nextStage: 'key8' },
-        { btnLabel: 'Run', nextStage: 'key9' },
+        { btnLabel: "Defend with sword", nextStage: "key8" },
+        { btnLabel: "Run!", nextStage: "key9" },
       ],
-    },
-    key8: {
-      image: <img src={congrates} alt="congrates" />,
-      statement:
-        '**Congratulations**<br><br>YOU WIN THE GAME! <br><br>You Killed the Monster and Saved your life.',
-      options: [{ btnLabel: 'Try Again', nextStage: 'start' }],
-    },
-    key9: {
-      image: <img src={monster} alt="monster" />,
-      statement:
-        'You are so tired that you fall asleep while exploring the castle and are killed by a terrible monster while you were sleeping. <br><br>YOU LOSE THE GAME!',
-      options: [{ btnLabel: 'Try Again', nextStage: 'start' }],
     },
     key7: {
-      image: <img src={prisoner} alt="prisoner" />,
+      image: <img src={prison} alt="imprisoned" />,
       statement:
-        'Without any money to buy a room you break into the nearest inn and fall asleep. The owner of the inn finds you and has the town quard lock you in a cell. <br><br>YOU LOSE THE GAME!',
-      options: [{ btnLabel: 'Try Again', nextStage: 'start' }],
+        "With no money to rent a room, you break into an inn. The owner is enraged and sent you to a cell. <br><br><strong>YOU LOSE THE GAME! </strong>",
     },
-    key4: {
-      image: <img src={prisoner} alt="prisoner" />,
+    key8: {
+      image: <img src={congrats} alt="congrats" />,
       statement:
-        'Without any money to buy a room you break into the nearest inn and fall asleep.The owner of the inn finds you and has the town quard lock you in a cell. <br><br>YOU LOSE THEGAME!',
-      options: [{ btnLabel: 'Try Again', nextStage: 'start' }],
+        "Congratulations!<br><br>YOU WON! <br><br>You Killed the Monster and Saved your life.",
+      options: [{ btnLabel: "Try Again", nextStage: "start" }],
     },
-    key5: {
-      image: <img src={village} alt="village" />,
+    key9: {
+      image: <img src={redmonster} alt="monster" />,
       statement:
-        'After leavning the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
-      options: [
-        { btnLabel: 'Explore the castle', nextStage: 'key10' },
-        { btnLabel: 'Continue to the village', nextStage: 'key11' },
-      ],
+        "The monster overran and overpowered you. <br><br>YOU LOSE THE GAME!",
+      options: [{ btnLabel: "Try Again", nextStage: "start" }],
     },
+
     key10: {
-      image: <img src={castle} alt="castle" />,
+      image: <img src={redmonster} alt="monster" />,
       statement:
-        'You are so tired that you fall asleep while exploring the castle and are killed by a terrible monster while you were sleeping. <br>YOU LOSE THE GAME!',
-      options: [{ btnLabel: 'Try Again', nextStage: 'start' }],
+        "After a long time without rest .You let down your guard. The monster easily defeated you. <br> YOU LOSE THE GAME!",
+      options: [{ btnLabel: "Try Again", nextStage: "start" }],
     },
     key11: {
-      image: <img src={prisoner} alt="prisoner" />,
+      image: <img src={prison} alt="imprisoned" />,
       statement:
-        'Without any money to buy a room you break into the nearest inn and fall asleep. The owner of the inn finds you and has the town quard lock you in a cell. <br>YOU LOSE THE GAME!',
-      options: [{ btnLabel: 'Try Again', nextStage: 'start' }],
-    },
-    key2: {
-      image: <img src={prisoner} alt="prisoner" />,
-      statement:
-        'Without any money to buy a room you break into the nearest inn and fall asleep. The owner of the inn finds you and has the town quard lock you in a cell. <br>YOU LOSE THE GAME!',
-      options: [{ btnLabel: 'Try Again', nextStage: 'start' }],
+        "Without any money to rent a room you break into the nearest inn and fall asleep. The owner  was enraged and out you in a cell.<br><br><strong>YOU LOSE THE GAME! </strong>",
+      options: [{ btnLabel: "Try Again", nextStage: "start" }],
     },
   };
 
@@ -122,11 +122,13 @@ const Adventure = () => {
 
   return (
     <>
-      {playButtonVisible && (
-        <button className="play-button text-white" onClick={startGame}>
-          Play
-        </button>
-      )}
+      <div className="btn-container">
+        {playButtonVisible && (
+          <button className="play-button adventure-btn" onClick={startGame}>
+            Play
+          </button>
+        )}
+      </div>
 
       {modalIsOpen && (
         <div>
