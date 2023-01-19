@@ -1,0 +1,48 @@
+form{
+    box-sizing: border-box;
+    position: absolute !important;
+    width: 40% !important;
+    height: 80% !important;
+    padding: 1rem !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; 
+    background: linear-gradient(102.59deg, rgba(255, 255, 255, 0.1) 4.04%, rgba(217, 217, 217, 0) 95.34%);
+    backdrop-filter: blur(25px);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    flex-direction: column;
+    transition: all .3s;
+}
+form .mb-3 input[type=text], input[type=password]{
+    border-radius: 0.5rem !important;
+    background: rgba(136, 133, 133, 0.15) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(136, 133, 133, 0.3) !important;
+    color: white;
+}
+.signup-btn{
+    margin-top: 1rem 1rem;
+    width: 6rem;
+    height: 2rem;
+    background: rgba(131, 127, 127, 0.15) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(7.7px) !important;
+    -webkit-backdrop-filter: blur(7.7px) !important;
+    border: 1px solid rgba(131, 127, 127, 1) !important;
+    color: rgb(236, 230, 230);
+    font-size: medium;
+    font-weight: 400 !important;
+}
+.signup-btn:hover{
+    background-color:rgb(151, 148, 148) !important;
+    color: black;
+    border: 1px solid rgb(83, 78, 78) !important;
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30) !important;
+    transform: scale(0.98) !important;
+}
