@@ -1,0 +1,87 @@
+.stage-play-btn {
+  text-align: center;
+  margin: 1rem;
+  width: 180px;
+  height: 60px;
+  clip-path: polygon(100% 50%, 25% 93.3%, 25% 6.7%);
+  background: #267c3a;
+  box-shadow: inset -20px -20px 47px #396042, inset 20px 20px 47px #e5ffff;
+}
+
+.stage-play-btn:hover {
+  background-image: linear-gradient(to top, #104123 0%, #245b10 100%);
+  transition: 0.5s !important;
+  color: #80b3d7 !important;
+}
+.stage-main-box {
+  box-sizing: border-box;
+  position: fixed !important;
+  width: 70% !important;
+  height: 70% !important;
+  padding: 1rem !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.stage-statement-box {
+  width: 90% !important;
+  padding: 2rem !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(136, 133, 133, 0.3) !important;
+  font-size: large !important;
+  font-weight: 500 !important;
+  color: white;
+  transition: all 0.2s;
+}
+.stage-card {
+  width: 250px !important;
+  height: 180px !important;
+  border: 2px double gray !important;
+}
+
+.stage-main-box .container {
+  align-self: flex-end;
+}
+
+.stage-main-box .container .btn {
+  height: 30px;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(131, 127, 127, 1) !important;
+  color: rgb(236, 230, 230);
+  font-size: 1.3rem;
+  font-weight: 500 !important;
+}
+.stage-main-box .container .btn:hover {
+  background-color: rgb(151, 148, 148) !important;
+  color: black;
+  border: 1px solid rgb(83, 78, 78) !important;
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3) !important;
+  transform: scale(0.98) !important;
+}
+.stage-statement-box {
+  width: 90% !important;
+  padding: 2rem !important;
+  position: fixed !important;
+  backdrop-filter: blur(5px) !important;
+  top: 50% !important;
+  left: 50% !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(136, 133, 133, 0.3) !important;
+  font-weight: 500 !important;
+  color: white;
+  line-height: 20px;
+  text-align: center;
+}
